@@ -1,0 +1,38 @@
+{
+    "name": "anurat/cri-computer-services",
+    "description": "A package for accessing computer services database",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anurat Chapanond",
+            "email": "anurat@cri.or.th"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CRI\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CRI\\Tests\\": "tests"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CRI\\ComputerServicesServiceProvider"
+            ]
+        }
+    }
+}
