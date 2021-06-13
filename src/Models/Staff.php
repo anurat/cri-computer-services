@@ -30,6 +30,15 @@ class Staff extends Model
             ->first();
     }
 
+    public function isResigned(): bool
+    {
+        if (is_null($this->end_date) || $this->end_date <= 0) {
+            return false;
+        }
+
+        return $this->end_date < now()->timestamp;
+    }
+
     public function emails(): HasMany
     {
         return $this->hasMany(Email::class, 'staff_id');
