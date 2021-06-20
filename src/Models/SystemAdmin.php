@@ -15,4 +15,9 @@ class SystemAdmin extends Model
     {
         return $this->belongsTo(App::class, 'app_id');
     }
+
+    public function staff(): BelongsTo
+    {
+        return $this->belongsTo(Staff::class, 'staff_id');
+    }
 }
