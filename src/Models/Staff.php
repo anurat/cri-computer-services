@@ -63,4 +63,9 @@ class Staff extends Model
     {
         return $this->hasMany(Address::class, 'staff_id');
     }
+
+    public function systemAdmins(): HasMany
+    {
+        return $this->hasMany(SystemAdmin::class, 'staff_id');
+    }
 }
