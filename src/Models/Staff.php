@@ -25,8 +25,15 @@ class Staff extends Model
 
     public function firstInternalPhone(): ?Phone
     {
-        return $this->phones
+        return $this->phones()
             ->where('tel_type', 'e')
+            ->first();
+    }
+
+    public function firstInternalEmail(): ?Email
+    {
+        return $this->emails()
+            ->whereRaw("email_address REGEXP '@cri.or.th$|@cgi.ac.th$'")
             ->first();
     }
 
